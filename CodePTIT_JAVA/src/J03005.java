@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
-public class J03004 {
-	
+public class J03005 {
 	public static String convertName (String s) {
         String[] arr = s.split("\\s+");
         String res = "";
-        for(String x : arr) {
+        for(int i = 1; i < arr.length; i++) {
+        		String x = arr[i];
         		res += Character.toUpperCase(x.charAt(0));
-                for(int i = 1; i < x.length(); i++) {
-                    res += Character.toLowerCase(x.charAt(i));
+                for(int j = 1; j < x.length(); j++) {
+                    res += Character.toLowerCase(x.charAt(j));
                 }
-                res += " ";
+                if(i < arr.length - 1) res += " ";
         }
-        return res;
+        return res + ", " + arr[0].toUpperCase();
     }
 	
 	public static void main(String[] args) {
