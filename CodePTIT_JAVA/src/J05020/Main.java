@@ -1,23 +1,22 @@
-package J05033;
+package J05020;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner (System.in);
 		int t = sc.nextInt();
-		List<Time> list = new ArrayList<>();
+		sc.nextLine();
+		ArrayList<Student> list = new ArrayList<>();
 		while(t-- > 0) {
-			Time time = new Time(sc.nextInt(), sc.nextInt(), sc.nextInt());
-			list.add(time);
+			Student student = new Student(sc.nextLine(), sc.nextLine(), sc.nextLine(), sc.nextLine());
+			list.add(student);
 		}
 		Collections.sort(list);
-		for(Time time : list) {
-			System.out.println(time);
+		for(Student student : list) {
+			System.out.println(student);
 		}
 	}
 }
