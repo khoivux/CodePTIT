@@ -1,4 +1,4 @@
-package J04004;
+package J04014;
 
 public class PhanSo {
 	private long tu, mau;
@@ -23,28 +23,18 @@ public class PhanSo {
 	}
 	public PhanSo tongPhanSo(PhanSo a) {
 		PhanSo tong = new PhanSo(); 
-		tong.mau = this.mau * a.getMau();
-		tong.tu = this.tu * a.getMau() + a.getTu() * this.mau;
+		tong.mau = this.mau * a.mau;
+		tong.tu = this.tu * a.mau + a.tu * this.mau;
 		tong.rutGon();
 		return tong;
-
 	}
-	public long getTu() {
-		return tu;
+	public PhanSo tichPhanSo(PhanSo a) {
+		PhanSo tich = new PhanSo();
+		tich.tu = this.tu * a.tu;
+		tich.mau = this.mau * a.mau;
+		tich.rutGon();
+		return tich;
 	}
-
-	public void setTu(long tu) {
-		this.tu = tu;
-	}
-
-	public long getMau() {
-		return mau;
-	}
-
-	public void setMau(long mau) {
-		this.mau = mau;
-	}
-
 	public String toString() {
 		return tu + "/" + mau;
 	}
