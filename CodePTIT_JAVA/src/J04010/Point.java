@@ -53,8 +53,4 @@ public class Point {
 		double radius = (ab * bc * ca) / (4 * triangleArea(a, b, c));
 		return Math.PI * radius * radius;
 	}
-	@Override
-	public String toString() {
-		return "Point [x=" + x + ", y=" + y + "]";
-	}
 }

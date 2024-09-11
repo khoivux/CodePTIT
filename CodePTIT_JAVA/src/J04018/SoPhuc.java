@@ -17,9 +17,8 @@ public class SoPhuc {
 	}
 	public String toString() {
 		String res = thuc + " ";
-		if(ao < 0) {
+		if(ao < 0)
 			res += "- " + (ao * -1);
-		}
 		else 
 			res += "+ " + ao;
 		return res + "i";
