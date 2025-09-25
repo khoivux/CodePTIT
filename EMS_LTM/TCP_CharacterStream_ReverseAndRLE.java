@@ -3,12 +3,8 @@ import java.io.BufferedWriter;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.Socket;
-import java.sql.SQLOutput;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Logger;
 
-public class TCP_CharacterStram_ReverseAndRLE {
+public class TCP_CharacterStream_ReverseAndRLE {
     private static final int port = 2208;
     private static final String host = "203.162.10.109";
 
