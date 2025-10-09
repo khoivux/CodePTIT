@@ -14,8 +14,8 @@ public class TCP_CharacterStream_ReverseAndRLE {
         String initialMessage = studentCode + ";" + qCode;
 
         try(Socket socket = new Socket(host, port)) {
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
             BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
             writer.write(initialMessage);
             writer.newLine();
