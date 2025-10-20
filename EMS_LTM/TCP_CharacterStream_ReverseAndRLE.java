@@ -19,55 +19,17 @@ public class TCP_CharacterStream_ReverseAndRLE {
         Socket socket = new Socket("203.162.10.109", 2208);
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-
-        String studentCode = "B22DCCN468";
-        String qCode = "xm2fOkl3";
-        String message = studentCode + ";" + qCode;
-
+        //CHARACTER STREAM
+        String message = "";
+        //WRITE
         writer.write(message);
         writer.newLine();
         writer.flush();
 
         // Nhận phản hồi từ server
         String response = reader.readLine();
-        System.out.println("Phản hồi từ server: " + response);
 
-        String[] words = response.split("\\s+");
-        StringBuilder reversed = new StringBuilder();
-        for (int i = 0; i < words.length; i++) {
-            reversed.append(new StringBuilder(words[i]).reverse());
-            if (i < words.length - 1) reversed.append(" ");
-        }
-
-        String str = reversed.toString();
-        StringBuilder res = new StringBuilder();
-        res.append(str.charAt(0));
-        int count = 1;
-
-        for (int i = 1; i < str.length(); i++) {
-            char cur = str.charAt(i);
-            char prev = str.charAt(i - 1);
-
-            if (!Character.isAlphabetic(cur)) {
-                count = 1;
-                res.append(cur);
-                continue;
-            }
-
-            if (cur == prev) {
-                count++;
-            } else {
-                if (count > 1) res.append(count);
-                res.append(cur);
-                count = 1;
-            }
-        }
-        if (count > 1) res.append(count);
-
-        System.out.println("Kết quả gửi lại: " + res);
-
-        // Gửi kết quả đã xử lý lại cho server
-        writer.write(res.toString());
+        writer.write(response);
         writer.newLine();
         writer.flush();
 

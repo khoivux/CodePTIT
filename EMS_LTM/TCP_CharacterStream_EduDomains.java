@@ -23,7 +23,7 @@ public class TCP_CharacterStream_EduDomains {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
         String studentCode = "B22DCCN468";
-        String qCode = "gBh79noa";
+        String qCode = "zJkUvNQG";
         String message = studentCode + ";" + qCode;
 
         // Gửi thông tin ban đầu lên server
